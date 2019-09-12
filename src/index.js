@@ -154,10 +154,10 @@ class RetroText {
     form.append('text2', this.text[1])
     form.append('text3', this.text[2])
 
-    const resp = await fetch(`https://basic.photofunia.com/categories/all_effects/retro-wave?server=${server}`, {
+    const resp = await fetch(`https://photofunia.com/categories/all_effects/retro-wave?server=${server}`, {
       method: 'POST',
       body: form,
-      headers: { 'Content-Type': 'multipart/form-data', 'Origin': 'https://photofunia.com', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0' }
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0' }
     })
 
     const body = cheerio.load(await resp.text())
